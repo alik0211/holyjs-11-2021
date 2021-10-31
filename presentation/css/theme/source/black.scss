@@ -1,0 +1,43 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #191919;
+
+$mainColor: #fff;
+$headingColor: #fff;
+
+$mainFontSize: 42px;
+$mainFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$headingFont: 'Fira Code', 'Fira Mono', monospace;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #42affa;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color(#222);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
